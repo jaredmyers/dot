@@ -1,2 +1,3 @@
 # dot
-dot files for personal workspace
+
+dot files for personal workspaces
