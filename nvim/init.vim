@@ -118,6 +118,7 @@ lua << EOF
 
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
   require('lspconfig')['pylsp'].setup {
     capabilities = capabilities
@@ -125,4 +126,19 @@ lua << EOF
   require('lspconfig')['gopls'].setup {
     capabilities = capabilities
   }
+EOF
+
+lua << EOF
+-- for jump to definition / declaration keymaps
+local nvim_lsp = require('lspconfig')
+  local on_attach = function(client, bufnr)
+    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+
+  -- Mappings.
+  local opts = { noremap=true, silent=true }
+
+  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+
+end
 EOF
