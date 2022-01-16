@@ -26,7 +26,7 @@
 
 ## This is here so configs done via the GUI are still loaded.
 ## Remove it to not load settings done via the GUI.
-# config.load_autoconfig(True)
+config.load_autoconfig(False)
 
 ## Aliases for commands. The keys of the given dictionary are the
 ## aliases, while the values are the commands they map to.
@@ -1145,7 +1145,7 @@ c.auto_save.session = False
 ## Directory to save downloads to. If unset, a sensible OS-specific
 ## default is used.
 ## Type: Directory
-c.downloads.location.directory = '/home/osiris/Downloads'
+c.downloads.location.directory = '/home/dev/Downloads'
 
 ## Prompt the user for the download location. If set to false,
 ## `downloads.location.directory` will be used.
