@@ -122,4 +122,7 @@ lua << EOF
   require('lspconfig')['pylsp'].setup {
     capabilities = capabilities
   }
+  require('lspconfig')['gopls'].setup {
+    capabilities = capabilities
+  }
 EOF
