@@ -16,6 +16,7 @@ set tabstop=4
 set hlsearch
 set encoding=utf-8
 set cursorline
+set guicursor=a:blinkon100
 
 let mapleader = " " " map leader to space
 
