@@ -11,17 +11,35 @@ syntax on
 filetype on
 
 " Some Basics
-set number
+
+" == line numbering ==
+"set nonumber
+"set number
 set relativenumber
+
+" == indentation == 
 set autoindent 
-set tabstop=4
+"set tabstop=4
+
+" == highlight search ==
 set hlsearch
-set encoding=utf-8
+set incsearch
+set linebreak
+
+" == cursor preferences ==
 set cursorline
 set guicursor=a:blinkon100
 
-let mapleader = " " " map leader to space
+" automatically write files when changing buffers
+"set autowrite
 
+set encoding=utf-8
+
+" mapping leader to space
+let mapleader = " "
+
+
+" == plugs ==
 call plug#begin()
 
 Plug 'https://github.com/vim-scripts/lightline'
@@ -39,6 +57,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 call plug#end()
@@ -144,7 +163,7 @@ local nvim_lsp = require('lspconfig')
   local opts = { noremap=true, silent=true }
 
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
 
 end
 EOF
