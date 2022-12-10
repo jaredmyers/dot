@@ -38,6 +38,7 @@ set encoding=utf-8
 " mapping leader to space
 let mapleader = " "
 
+let g:go_auto_type_info = 1
 
 " == plugs ==
 call plug#begin()
@@ -57,6 +58,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'SirVer/ultisnips'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'kblin/vim-fountain'
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
@@ -141,6 +143,7 @@ lua << EOF
     })
   })
 
+-- update
   -- Setup lspconfig.
   local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
