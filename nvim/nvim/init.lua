@@ -1,0 +1,2 @@
+require("newconfig")
+print("hello")
