@@ -1,16 +1,10 @@
+--[[
 require('lspconfig')['pylsp'].setup({
 	capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
 require('lspconfig')['gopls'].setup({
 	capabilities = require('cmp_nvim_lsp').default_capabilities(),
 })
-require('lspconfig')['bashls'].setup({
-	capabilities = require('cmp_nvim_lsp').default_capabilities(),
-})
-require('lspconfig')['tsserver'].setup({
-	capabilities = require('cmp_nvim_lsp').default_capabilities(),
-})
-
 ---
 -- Snippet engine setup
 ---
@@ -145,3 +139,4 @@ local cmp_config = {
 }
 
 cmp.setup(cmp_config)
+--]]

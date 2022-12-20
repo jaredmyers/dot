@@ -1,0 +1,17 @@
+font:
+  normal:
+    family: meslolgl
+    style: Regular
+  bold:
+    family: meslolgl
+    style: Bold
+  italic:
+    family: meslolgl
+    style: Italic
+  bold_italic:
+    family: meslolgl
+    style: Bold Italic
+
+  size: 12
+
+

@@ -1,2 +1,1 @@
 require("newconfig")
-print("hello")
