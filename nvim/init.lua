@@ -14,5 +14,5 @@ vim.cmd "set incsearch"
 
 vim.cmd "let g:go_auto_type_info=1"
 
-vim.cmd "let g:lightline = {'colorscheme': 'one'}"
+--vim.cmd "let g:lightline = {'colorscheme': 'one'}"
 
