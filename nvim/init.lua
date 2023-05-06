@@ -14,5 +14,5 @@ vim.cmd "set incsearch"
 
 vim.cmd "let g:go_auto_type_info=1"
 
---vim.cmd "let g:lightline = {'colorscheme': 'one'}"
-
+--vim.cmd "let g:python3_host_prog = '$HOME/langs/python/bin/python3.11'"
+--vim.cmd "let g:go_bin_path = '$HOME/langs/go/bin'"
