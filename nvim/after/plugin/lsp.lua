@@ -1,13 +1,25 @@
 local lsp = require('lsp-zero')
 
-lsp.preset('recommended')
+lsp.on_attach(function(client, bufnr)
+  lsp.default_keymaps({buffer = bufnr})
+end)
 
-lsp.ensure_installed({
-    'pylsp',
+require('mason').setup({})
+require('mason-lspconfig').setup({
+  ensure_installed = {
     'gopls',
     'rust_analyzer',
     'eslint',
     'bashls',
+    'clangd',
+  },
+  handlers = {
+    lsp.default_setup,
+  },
 })
 
-lsp.setup()
+require('lspconfig').pylsp.setup({
+    on_attach = function(client, bufnr)
+    end
+})
+
