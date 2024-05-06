@@ -1,13 +1,12 @@
-# .bashrc for current VM
+# .bashrc
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
+    . /etc/bashrc
 fi
 
 # User specific environment
-if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]
-then
+if ! [[ "$PATH" =~ "$HOME/.local/bin:$HOME/bin:" ]]; then
     PATH="$HOME/.local/bin:$HOME/bin:$PATH"
 fi
 export PATH
@@ -17,16 +16,39 @@ export PATH
 
 # User specific aliases and functions
 if [ -d ~/.bashrc.d ]; then
-	for rc in ~/.bashrc.d/*; do
-		if [ -f "$rc" ]; then
-			. "$rc"
-		fi
-	done
+    for rc in ~/.bashrc.d/*; do
+        if [ -f "$rc" ]; then
+            . "$rc"
+        fi
+    done
 fi
-
 unset rc
 
-source $HOME/.config/skripts/git-prompt.sh
-PS1='\[\033[01;33m\][\[\033[01;34m\]\w\[\033[01;33m\]]\[\033[31m\]\[\033[00m\]$(__git_ps1 " (%s)") \$ '
+# Additions
+#source $HOME/.config/skripts/git-prompt.sh
+#PS1='\[\033[01;33m\][\[\033[01;34m\]\w\[\033[01;33m\]]\[\033[31m\]\[\033[00m\]$(__git_ps1 " (%s)") \$ '
+#
+function t(){
+    padname='Synaptics tm2964-001'
+    status="$(xinput --list-props "Synaptics tm2964-001" | grep "Device Enabled" | awk '{print $4}')"
+    # echo $status
+    if [ $status == 1 ]; then
+        xinput disable "Synaptics tm2964-001"
+        echo "trackpad disabled"
+    else
+        xinput enable "Synaptics tm2964-001"
+        echo "trackpad enabled"
+    fi
+}
+
+export -f t
+
+set -o vi
+alias vi='nvim'
+alias ls='ls --color=auto'
+alias k='kubectl'
+alias pc='podman-compose'
+alias p='podman'
 export PATH=$PATH:/usr/local/go/bin
-alias vi="nvim"
+export EDITOR='nvim'
+export RANGER_LOAD_DEFAULT_RC=false
