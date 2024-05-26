@@ -1,0 +1,5 @@
+require("core.config.colorscheme")
+require("core.config.treesitter")
+require("core.config.lualine")
+require("core.config.telescope")
+require("core.config.lsp")
