@@ -18,39 +18,12 @@ require('mason-lspconfig').setup({
         "pyright",
         "ruff_lsp",
     },
-    --handlers = {
-    --    lsp.default_setup,
-    --},
+    --handlers = {},
 })
 
-
 local lsp_config = require("lspconfig")
---local lsp_defaults = lsp_config.util.default_config
 
---lsp_defaults.capabilities = vim.tbl_deep_extend('force', lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
-
---require("lspconfig.ui.windows").default_options.border = "single"
-
--- ╭─────────────╮
--- │ LSP BORDERS │
--- ╰─────────────╯
-local border = {
-    { '┌', 'FloatBorder' },
-    { '─', 'FloatBorder' },
-    { '┐', 'FloatBorder' },
-    { '│', 'FloatBorder' },
-    { '┘', 'FloatBorder' },
-    { '─', 'FloatBorder' },
-    { '└', 'FloatBorder' },
-    { '│', 'FloatBorder' },
-}
-
---local handlers = {
---    ['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, { border = border }),
---    ['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, { border = border }),
---}
-
---vim.diagnostic.config({float = {border= border}})
+-- more stuff here, maybe.
 
 --  ╭──────────────────────────────────────────────────────────╮
 --  │                         SERVERS                          │
@@ -58,58 +31,20 @@ local border = {
 
 -- local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
--- ╭───────╮
--- │ GOPLS │
--- ╰───────╯
-lsp_config.gopls.setup({
-    -- capabilities = lsp_capabilities,
-    --  on_attach = on_attach
-})
+lsp_config.gopls.setup({})
+lsp_config.jsonls.setup({})
+lsp_config.lua_ls.setup({})
+lsp_config.bashls.setup({})
+lsp_config.rust_analyzer.setup({})
+lsp_config.eslint.setup({})
+lsp_config.clangd.setup({})
+lsp_config.yamlls.setup({})
+lsp_config.cmake.setup({})
+lsp_config.dockerls.setup({})
+lsp_config.docker_compose_language_service.setup({})
+lsp_config.pyright.setup({})
+lsp_config.ruff_lsp.setup({})
 
--- ╭────────╮
--- │ JSONLS │
--- ╰────────╯
-lsp_config.jsonls.setup({
-    -- capabilities = lsp_capabilities,
-    --  capabilities = require("cmp_nvim_lsp").default_capabilities(),
-    --  on_attach = on_attach
-})
-
--- ╭────────╮
--- │ LUA_LS │
--- ╰────────╯
-lsp_config.lua_ls.setup({
-    -- capabilities = lsp_capabilities,
-    --  capabilities = require("cmp_nvim_lsp").default_capabilities(),
-    --  on_attach = on_attach
-})
-
--- ╭─────────╮
--- │ PYRIGHT │
--- ╰─────────╯
-lsp_config.pyright.setup({
-    -- capabilities = lsp_capabilities,
-    --  capabilities = require("cmp_nvim_lsp").default_capabilities(),
-    --  on_attach = on_attach
-})
-
--- ╭──────╮
--- │ RUFF │
--- ╰──────╯
-lsp_config.ruff_lsp.setup({
-    -- capabilities = lsp_capabilities,
-    --  capabilities = require("cmp_nvim_lsp").default_capabilities(),
-    --  on_attach = on_attach
-})
-
--- ╭────────────────╮
--- │ DOCKER COMPOSE │
--- ╰────────────────╯
-lsp_config.docker_compose_language_service.setup({
-    -- capabilities = lsp_capabilities,
-    --  capabilities = require("cmp_nvim_lsp").default_capabilities(),
-    --  on_attach = on_attach
-})
 
 -- ╭─────╮
 -- │ CMP │
