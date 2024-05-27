@@ -14,3 +14,5 @@ vim.keymap.set('n', '<leader>bf', function()
         previewer =  false,
     })
 end, { desc = 'Currrent Buffer Fuzzy' })
+
+require("nvim-web-devicons").setup({})

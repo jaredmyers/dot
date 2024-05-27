@@ -33,6 +33,12 @@ require("lazy").setup({
     --- Golang Goodness
     'fatih/vim-go',
 
+    {'iamcco/markdown-preview.nvim',
+        build = "cd app && npm install",
+    },
+
+
+
     ---- "saadparwaiz1/cmp_luasnip",
     --"mfussenegger/nvim-lint",
     --"theprimeagen/harpoon",
