@@ -3,10 +3,10 @@ require("lazy").setup({
     "navarasu/onedark.nvim",
     "tpope/vim-fugitive",
 
-    "nvim-treesitter/nvim-treesitter",
+    {"nvim-treesitter/nvim-treesitter", branch = "master", lazy = false, build = ":TSUpdate"},
 
     ---- make sure to pin telescope tag to "0.1.5" if using nvim 8.0 (rhel)
-    {"nvim-telescope/telescope.nvim", tag="0.1.6",
+    {"nvim-telescope/telescope.nvim", tag="0.1.8",
         dependencies = {"nvim-lua/plenary.nvim"}
     },
 
@@ -33,9 +33,16 @@ require("lazy").setup({
     --- Golang Goodness
     'fatih/vim-go',
 
-    {'iamcco/markdown-preview.nvim',
-        build = "cd app && npm install",
+    --- virtual text refinements
+    {
+        "rachartier/tiny-inline-diagnostic.nvim",
+        event = "VeryLazy",
+        priority = 1000,
     },
+
+    -- {'iamcco/markdown-preview.nvim',
+    --     build = "cd app && npm install",
+    -- },
 
 
 

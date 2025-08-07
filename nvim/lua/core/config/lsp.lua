@@ -16,14 +16,19 @@ require('mason-lspconfig').setup({
         "dockerls",
 	    "docker_compose_language_service",
         "pyright",
-        "ruff_lsp",
+        "ruff",
     },
+    -- it seems mason is auto attaching the LSPs now? 
+    -- so this is what exclusion from auto attach looks like,
+    -- or auto-attach can be allowed and the manually setups below
+    -- can be commented out. 
+    -- automatic_enable = {
+    --     exclude = {"rust_analyzer"}
+    -- }
     --handlers = {},
 })
 
-local lsp_config = require("lspconfig")
-
--- more stuff here, maybe.
+-- local lsp_config = require("lspconfig")
 
 --  ╭──────────────────────────────────────────────────────────╮
 --  │                         SERVERS                          │
@@ -31,19 +36,19 @@ local lsp_config = require("lspconfig")
 
 -- local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-lsp_config.gopls.setup({})
-lsp_config.jsonls.setup({})
-lsp_config.lua_ls.setup({})
-lsp_config.bashls.setup({})
-lsp_config.rust_analyzer.setup({})
-lsp_config.eslint.setup({})
-lsp_config.clangd.setup({})
-lsp_config.yamlls.setup({})
-lsp_config.cmake.setup({})
-lsp_config.dockerls.setup({})
-lsp_config.docker_compose_language_service.setup({})
-lsp_config.pyright.setup({})
-lsp_config.ruff_lsp.setup({})
+-- Since mason-lspconfig seems to be auto enabling the lsps, I'm commenting these out for now.
+-- lsp_config.gopls.setup({})
+-- lsp_config.jsonls.setup({})
+-- lsp_config.lua_ls.setup({})
+-- lsp_config.bashls.setup({})
+-- lsp_config.rust_analyzer.setup({})
+-- lsp_config.eslint.setup({})
+-- lsp_config.clangd.setup({})
+-- lsp_config.yamlls.setup({})
+-- lsp_config.cmake.setup({})
+-- lsp_config.dockerls.setup({})
+-- lsp_config.docker_compose_language_service.setup({})
+-- lsp_config.pyright.setup({})
 
 
 -- ╭─────╮
